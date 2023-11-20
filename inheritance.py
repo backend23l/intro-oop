@@ -1,31 +1,16 @@
-class Animal:
-    def __init__(self, name: str):
-        self.name = name
+class Tortburchak:
+    def __init__(self, a: int, b: int):
+        self.a = a
+        self.b = b
 
-    def description(self):
-        return  f"{self.name} is animal."
+    def area(self) -> int:
+        return self.a * self.b
 
 
-class Dog(Animal):
-    def __init__(self, name: str, age: int):
-        super().__init__(name)
-        self.age = age
+class Kvadrat(Tortburchak):
+    def __init__(self, a: int):
+        super().__init__(a, a)
 
-    def description(self):
-        return  f"{self.name} is dog and {self.age} years old."
 
-class Cat(Animal):
-    def __init__(self, name: str, age: int):
-        Animal.__init__(self, name)
-        self.age = age
-
-    def description(self):
-        return  f"{self.name} is cat and {self.age} years old."
-
-a = Animal("cow")
-d = Dog("simba", 3)
-c = Cat("mosh", 5)
-
-print(a.description())
-print(d.description())
-print(c.description())
+k = Kvadrat(6)
+print(k.area())
